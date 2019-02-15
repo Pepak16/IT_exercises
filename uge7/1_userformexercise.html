@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <center>
+        <h1>Exercise 1: user form exercise</h1>
+        <p><strong>Description:</strong> a form with if statements to accept a given form of input.</p>
+        <br/>
+        <form method="post" onsubmit="return checkFields()">
+                <label for="name" style="color: blue;">name</label>
+                <br> 
+                <input type="text" name="name" id="name"/> 
+                <br> 
+                <br>
+                <label for="password" style="color: blue;">password</label>
+                <br> 
+                <input type="password" name="password" id="password"/> 
+                <br>
+                <br>
+                <label for="phone" style="color: blue;">phone number</label>
+                <br>
+                <input type="text" name="phone" id="phone"/> 
+                <br> 
+                <br>
+                <label for="email" style="color: blue;">email adress</label>
+                <br>
+                <input type="text" name="email" id="email"/>
+                <br> 
+                <br>
+                <label for="zip" style="color: blue;">zip code</label>
+                <br> 
+                <input type="text" name="zip" id="zip"/> 
+                <br> 
+                <br/>
+                <input type="submit" name="submit" id="submit"/> 
+            </form> 
+            <p id="warning" style="color: red"></p>
+        </center>
+        <script>
+            var name = document.getElementById("password").value;
+            var password = document.getElementById("password").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var zip = document.getElementById("zip").value;
+
+            function checkFields() {
+                if () {
+                    
+                    window.replace("1_succeeded.html");
+                    return true;
+                    
+                } else {
+                    return false;
+                    document.getElementById("warning").value = "hello";
+                }
+            }
+        </script>
+    </body>
+</html>
