@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Exercise 1</title>
     </head>
     <body>
         <center>
         <h1>Exercise 1: user form exercise</h1>
         <p><strong>Description:</strong> a form with if statements to accept a given form of input.</p>
+        <p><i>*Just hover on the titles to check guidelines out</i></p>
         <br/>
-        <form method="post" onsubmit="return checkFields()">
-                <label for="name" style="color: blue;">name</label>
+        <form action="1_succeeded.html" onsubmit="return checkFields()" method="post" >
+                <label title="Two or more words, separated by whitespace." style="color: blue;">name</label>
                 <br> 
                 <input type="text" name="name" id="name"/> 
                 <br> 
                 <br>
-                <label for="password" style="color: blue;">password</label>
+                <label title="Password must contain 8 or more chars. At least one lower case char. At least one upper case char. At least one number.
+                " for="password" style="color: blue;">password</label>
                 <br> 
                 <input type="password" name="password" id="password"/> 
                 <br>
@@ -34,26 +36,36 @@
                 <input type="text" name="zip" id="zip"/> 
                 <br> 
                 <br/>
+                <br/>
                 <input type="submit" name="submit" id="submit"/> 
             </form> 
-            <p id="warning" style="color: red"></p>
         </center>
         <script>
-            var name = document.getElementById("password").value;
-            var password = document.getElementById("password").value;
-            var phone = document.getElementById("phone").value;
-            var email = document.getElementById("email").value;
-            var zip = document.getElementById("zip").value;
 
+            //function that checks whether all fields live up to specific constraints
             function checkFields() {
-                if () {
-                    
-                    window.replace("1_succeeded.html");
-                    return true;
-                    
+
+                //variables initializes input from fields
+                var name = document.getElementById("name").value;
+                var password = document.getElementById("password").value;
+                var phone = document.getElementById("phone").value;
+                var email = document.getElementById("email").value;
+                var zip = document.getElementById("zip").value;
+
+                var passwordConstraint = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/g;
+                var phoneConstraint = /^\+?\d+$/g;
+
+                //checking constraints
+                if (passwordConstraint.test(password)) {
+                    if (phoneConstraint.test(phone)) {
+                        return true;
+                    } else {
+                        alert("Please check field constraints and try again");
+                        return false;
+                    }
                 } else {
+                    alert("Please check field constraints and try again");
                     return false;
-                    document.getElementById("warning").value = "hello";
                 }
             }
         </script>
