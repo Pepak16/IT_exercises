@@ -53,10 +53,11 @@
                 var zip = document.getElementById("zip").value;
 
                 var passwordConstraint = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/g;
-                var phoneConstraint = /^\+?\d+$/g;
+                var phoneConstraint = /^\+{1}[0-9]/;
 
                 //checking constraints
-                if (passwordConstraint.test(password)) {
+                //if (passwordConstraint.test(password)) {
+                if (true) {
                     if (phoneConstraint.test(phone)) {
                         return true;
                     } else {
